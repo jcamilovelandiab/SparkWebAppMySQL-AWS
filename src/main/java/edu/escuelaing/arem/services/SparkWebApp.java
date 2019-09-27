@@ -12,34 +12,31 @@ public class SparkWebApp {
      */
     public static void main(String[] args) {
         port(getPort());
-        get("/hello", (req, res) -> "Hello Spark Web Heroku");
-        get("/inputdata", (req, res) -> inputDataPage(req, res));
-        get("/results", (req, res) -> resultsPage(req, res));
+        get("/Beta", (req, res) -> inputDataPage(req, res));
     }
 
     private static String inputDataPage(Request req, Response res) {
-        String pageContent
+        if(req.queryParams("value")!=null){
+            Integer number=Integer.parseInt(req.queryParams("value"));
+            return "The square of the given number is: "+ MathServices.square(number) ;
+        }else{
+            String pageContent
                 = "<!DOCTYPE html>"
                 + "<html>"
                 + "<body>"
                 + "<h2>Square</h2>"
-                + "<form action=\"/results\">"
+                + "<form action=\"/Beta\">"
                 + "  Please. Insert the number:<br>"
-                + "  <input type=\"text\" name=\"number\" value=\"\">"
+                + "  <input type=\"text\" name=\"value\" value=\"\">"
                 + "  <br><br>"
                 + "  <input type=\"submit\" value=\"Submit\">"
                 + "</form>"
-                + "<p>If you click the \"Submit\" button, the form-data will be sent to a page called \"/results\". Also, the square of the number entered will be calculated and shown on that page. \"/results\".</p>"
                 + "</body>"
                 + "</html>";
-        return pageContent;
+            return pageContent;
+        }
     }
-
-    private static String resultsPage(Request req, Response res) {
-        Integer number=Integer.parseInt(req.queryParams("number"));
-        return "The square of the given number is: "+ MathServices.square(number) ;
-    }
-
+    
     /**
      * This method reads the default port as specified by the PORT variable in
      * the environment.
