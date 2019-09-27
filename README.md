@@ -15,7 +15,7 @@ mvn package
 
 To execute the project
 ```
-mvn exec:java -Dexec.mainClass="edu.escuelaing.arem.SparkWebApp"
+mvn exec:java -Dexec.mainClass="edu.escuelaing.arem.services.SparkWebApp"
 ```
 
 To open the website locally go to
