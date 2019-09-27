@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
   
   
-   <properties>
+    <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -33,7 +33,11 @@
             <artifactId>spark-core</artifactId>
             <version>2.7.2</version>
         </dependency>
+        
+        
     </dependencies>
+    
+    
 
     <!-- JAVADOC -->
     <reporting>
@@ -95,9 +99,8 @@
                 </dependencies>
                 
             </plugin>
-            
+
+
         </plugins>
     </build>
-  
-  
 </project>

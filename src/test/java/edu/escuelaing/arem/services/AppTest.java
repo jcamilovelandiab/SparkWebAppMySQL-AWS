@@ -1,38 +1,23 @@
 package edu.escuelaing.arem.services;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Locale;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+public class AppTest{
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+	@Test
+    public void squareTest1() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("test1.txt"));
+        String str = null;
+        while((str = br.readLine()) != null) {
+            Integer number = Integer.parseInt(str);
+            assertTrue(MathServices.square(number).equals(new Integer(number*number)));
+        }
+        br.close();
     }
 }
