@@ -4,10 +4,6 @@ import spark.Request;
 import spark.Response;
 import static spark.Spark.*;
 
-/**
- * Hello world!
- *
- */
 public class SparkWebApp {
     /**
      * This main method uses SparkWeb static methods and lambda functions to
@@ -19,7 +15,6 @@ public class SparkWebApp {
         get("/", (req, res) -> "Hello Spwark Web Heroku");
         get("/inputdata", (req, res) -> inputDataPage(req, res));
         get("/results", (req, res) -> resultsPage(req, res));
-        
     }
 
     private static String inputDataPage(Request req, Response res) {
