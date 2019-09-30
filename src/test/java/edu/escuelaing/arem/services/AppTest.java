@@ -10,14 +10,5 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppTest{
 
-	@Test
-    public void squareTest1() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("test1.txt"));
-        String str = null;
-        while((str = br.readLine()) != null) {
-            Integer number = Integer.parseInt(str);
-            assertTrue(MathServices.square(number).equals(new Integer(number*number)));
-        }
-        br.close();
-    }
+
 }
