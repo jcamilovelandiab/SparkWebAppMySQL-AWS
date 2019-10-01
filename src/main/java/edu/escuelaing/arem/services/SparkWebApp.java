@@ -19,6 +19,7 @@ public class SparkWebApp {
         get("/users", (req, res) -> getUsers(req, res));
     }
 
+
     private static String inputDataPage(Request req, Response res) {
         String name = req.queryParams("fullName");
         String email = req.queryParams("email");

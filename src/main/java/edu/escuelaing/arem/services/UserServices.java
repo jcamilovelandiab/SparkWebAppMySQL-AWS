@@ -21,7 +21,7 @@ public class UserServices {
         Connection connection = null;
         try {
         	Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://architecturalpatterns.crr6pg3w0mcr.us-east-1.rds.amazonaws.com:3306/architecturalpatterns", "admin", "admin123");
+            connection = DriverManager.getConnection("jdbc:mysql://mysql-aws-database.crr6pg3w0mcr.us-east-1.rds.amazonaws.com:3306/mysql-aws-database", "admin", "admin123");
             Statement stmt = connection.createStatement();
             String query = "insert users(email, name, description) values('"+user.getEmail()+"','"+user.getName()+"','"+user.getDescription()+"')";
             stmt.executeUpdate(query);
@@ -43,7 +43,7 @@ public class UserServices {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://architecturalpatterns.crr6pg3w0mcr.us-east-1.rds.amazonaws.com:3306/architecturalpatterns", "admin", "admin123");
+            connection = DriverManager.getConnection("jdbc:mysql://mysql-aws-database.crr6pg3w0mcr.us-east-1.rds.amazonaws.com:3306/mysql-aws-database", "admin", "admin123");
             Statement stmt = connection.createStatement();
             String query = "select email, name, description from users where email = '"+email+"'";
             ResultSet rs = stmt.executeQuery(query);
@@ -72,7 +72,7 @@ public class UserServices {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://architecturalpatterns.crr6pg3w0mcr.us-east-1.rds.amazonaws.com:3306/architecturalpatterns", "admin", "admin123");
+            connection = DriverManager.getConnection("jdbc:mysql://mysql-aws-database.crr6pg3w0mcr.us-east-1.rds.amazonaws.com:3306/mysql-aws-database", "admin", "admin123");
             Statement stmt = connection.createStatement();
             String query = "select email, name, description from users";
             ResultSet rs = stmt.executeQuery(query);
