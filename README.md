@@ -10,7 +10,7 @@ The web application is deployed in heroku. To visit the website go to the follow
 
 To download the project dependencies the following line must be executed.
 ```
-mvn package
+mvn clean compile assembly:single
 ```
 
 To execute the project
